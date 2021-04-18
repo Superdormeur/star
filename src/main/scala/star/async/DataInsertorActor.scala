@@ -65,7 +65,7 @@ class DataInsertorActor(
     }
   }
 
-  private def sumPayloads(payloads: Seq[SessionPayload]): (Int, Int) = {
-    payloads.foldLeft((0, 0)) { case ((cdnSum, p2pSum), next) => (cdnSum + next.cdn, p2pSum + next.p2p) }
+  private def sumPayloads(payloads: Seq[SessionPayload]): (Long, Long) = {
+    payloads.foldLeft((0L, 0L)) { case ((cdnSum, p2pSum), next) => (cdnSum + next.cdn, p2pSum + next.p2p) }
   }
 }

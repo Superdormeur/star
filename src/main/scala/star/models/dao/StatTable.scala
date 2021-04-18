@@ -18,9 +18,9 @@ class StatTable(tag: Tag) extends Table[StatRow](tag, "stats") {
 
   def content: Rep[String] = column[String]("content")
 
-  def cdn: Rep[Int] = column[Int]("cdn")
+  def cdn: Rep[Long] = column[Long]("cdn")
 
-  def p2p: Rep[Int] = column[Int]("p2p")
+  def p2p: Rep[Long] = column[Long]("p2p")
 
   def * : ProvenShape[StatRow] =
     (

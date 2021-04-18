@@ -7,10 +7,10 @@ case class SessionPayload(
     token: String,
     customer: String,
     content: String,
-    timespan: Int,
-    p2p: Int,
-    cdn: Int,
-    sessionDuration: Int
+    timespan: Long,
+    p2p: Long,
+    cdn: Long,
+    sessionDuration: Long
 )
 
 object SessionPayload {
@@ -22,13 +22,13 @@ case class StatRow(
     Time: DateTime,
     customer: String,
     content: String,
-    cdn: Int,
-    p2p: Int
+    cdn: Long,
+    p2p: Long
 )
 
 object StatRow {
 
-  def fromStat(dateTime: DateTime, customer: String, content: String, cdn: Int, p2p: Int): StatRow = {
+  def fromStat(dateTime: DateTime, customer: String, content: String, cdn: Long, p2p: Long): StatRow = {
     StatRow(
       id = None,
       Time = dateTime,
